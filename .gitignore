@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Models and Data
+# (Uncomment the lines below if you don't want to upload your model or dataset to GitHub)
+# backend/model.pkl
+# backend/data/
+
+# Environments
+env/
+venv/
+.env
+.pytest_cache/
+
+# OS Files
+.DS_Store
+Thumbs.db
