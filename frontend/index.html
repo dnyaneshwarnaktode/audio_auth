@@ -1,37 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saksi Audio Detector</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>AudioAuth - Deepfake Voice Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-
-    <div class="container">
-        <h1>Saksi AI Audio</h1>
-        <p class="subtitle">Deepfake and Synthesized Voice Detection</p>
-
-        <div class="upload-area" id="drop-zone">
-            <span class="upload-icon">🎵</span>
-            <p class="file-info" id="file-name">Click or drag an audio file (.wav)</p>
-            <input type="file" id="file-input" accept="audio/*">
-        </div>
-
-        <button class="btn" id="analyze-btn" disabled>
-            <span id="btn-text">Analyze Audio</span>
-            <div class="loader" id="loader"></div>
-        </button>
-
-        <div class="error-message" id="error-msg"></div>
-
-        <div class="result-box" id="result-box">
-            <div class="badge" id="result-badge">Real Audio</div>
-            <div class="confidence" id="confidence-score">99.9% <span>Confidence</span></div>
-        </div>
+    <!-- Background Elements -->
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎙️</span>
+                <span class="logo-text">AudioAuth</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#detector">Detector</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Landing Section -->
+        <section id="home" class="hero-section">
+            <h1 class="hero-title">Detect AI Synthesized <br>Voices with <span>Precision</span></h1>
+            <p class="hero-subtitle">Protect yourself from audio deepfakes and spoofing attacks. Our advanced AI model analyzes audio files and recordings to determine authenticity in seconds.</p>
+            <a href="#detector" class="primary-btn">Start Analyzing</a>
+        </section>
+
+        <!-- Detector Tool Section -->
+        <section id="detector" class="detector-section">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="upload">Upload File</button>
+                    <button class="tab-btn" data-tab="record">Record Audio</button>
+                </div>
+
+                <!-- Upload Tab Content -->
+                <div class="tab-content active" id="upload-tab">
+                    <div class="upload-area" id="drop-zone">
+                        <span class="upload-icon">🎵</span>
+                        <p class="file-info" id="file-name">Click or drag an audio file (.wav, .mp3)</p>
+                        <input type="file" id="file-input" accept="audio/*">
+                    </div>
+                </div>
+
+                <!-- Record Tab Content -->
+                <div class="tab-content" id="record-tab">
+                    <div class="record-area">
+                        <div class="recording-status" id="recording-status">Ready to record</div>
+                        <button class="record-btn" id="record-btn" title="Click to record">
+                            <span class="record-icon">🎤</span>
+                        </button>
+                        <audio id="audio-preview" controls class="hidden"></audio>
+                    </div>
+                </div>
+
+                <!-- Shared Controls & Results -->
+                <button class="btn" id="analyze-btn" disabled>
+                    <span id="btn-text">Analyze Audio</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+
+                <div class="error-message" id="error-msg"></div>
+
+                <div class="result-box" id="result-box">
+                    <div class="badge" id="result-badge">Real Audio</div>
+                    <div class="confidence" id="confidence-score">99.9% <span>Confidence</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container about-container">
+                <h2>How it works</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Deep Learning</h3>
+                        <p>Powered by advanced neural networks trained on diverse authentic and synthesized audio datasets.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Processing</h3>
+                        <p>Real-time analysis provides results in mere seconds, allowing quick robust verification.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Your audio matters. We process recordings rapidly and don't store your sensitive conversational data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AudioAuth. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
